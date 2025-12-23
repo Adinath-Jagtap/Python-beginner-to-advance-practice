@@ -9,6 +9,7 @@ reversed_string = string[::-1]
 print("Reversed String is : ",reversed_string)
 
 #check whether palindrome or not - Q5b
+#Case insensative version
 if string.lower() == reversed_string.lower() :
     print(string + " is palindrome")
 else:
