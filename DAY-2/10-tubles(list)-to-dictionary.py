@@ -6,5 +6,5 @@ pairs = [("a", 1), ("b", 2), ("c", 3)]
 #list of tubles to dictionary
 my_dict = dict(pairs) 
 
-#printing the result 
+#printing the result
 print(my_dict)
