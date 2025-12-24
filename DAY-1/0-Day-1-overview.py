@@ -2,9 +2,9 @@
 DAY 1: Python Basics - Variables, Data Types, Operators
 '''
 
-# =============================================================================
+# ===========================================================================
 # VARIABLES
-# =============================================================================
+# ===========================================================================
 '''
 Variables are names that refer to values stored in memory.
 Python uses dynamic typing - no need to declare types explicitly.
