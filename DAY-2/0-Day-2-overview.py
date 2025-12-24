@@ -317,7 +317,7 @@ person = {
     "city": "New York"
 }
 
-# Using dict() constructor
+# Using dict() constructor 
 person2 = dict(name="Jane", age=25, city="Boston")
 
 # From list of tuples
