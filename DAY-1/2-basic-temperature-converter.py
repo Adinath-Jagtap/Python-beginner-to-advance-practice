@@ -1,4 +1,5 @@
 #Q2 basic temperature converter Celsius and Fahrenheit
+#Temperature converter (Celsius ↔ Fahrenheit)
 
 #To know the conversion type
 num = int(input("Press 1 for (Celsius ↔ Fahrenheit) Press 2 for (Fahrenheit ↔ Celsius): "))

@@ -1,5 +1,5 @@
-#Q5a String Reverser
-#Q5b Palindrome Checker
+#Q5a String Reverser : String reverser
+#Q5b Palindrome Checker : Palindrome checker
 
 #input string
 string = str(input("Enter the string : "))

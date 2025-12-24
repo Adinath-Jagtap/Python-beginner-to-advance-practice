@@ -1,4 +1,5 @@
 #Vowel Calculator 
+#Vowel counter in string
 
 #input of string and vowel count init 0
 string = str(input("Enter the Word: "))

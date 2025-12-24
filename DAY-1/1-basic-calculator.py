@@ -1,4 +1,4 @@
-#Q1 Basic calculator:
+#Q1 Basic calculator: Calculator (add, subtract, multiply, divide)
 
 #assigning variables by taking input 
 number1 = float(input("Enter your first number: "))
