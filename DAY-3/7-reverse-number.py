@@ -1,4 +1,4 @@
-#Q6 Reverse the input number
+#Q7 Reverse the input number
 
 #Input
 number = input("Enter Number: ")
