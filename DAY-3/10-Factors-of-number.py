@@ -11,4 +11,5 @@ for i in range(1, a + 1):
     if a % i == 0:
         factors1.append(i)
 
+#printing result
 print(factors1,"are factors of",a)
