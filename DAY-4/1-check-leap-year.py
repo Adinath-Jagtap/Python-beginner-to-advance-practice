@@ -1,4 +1,4 @@
-#1 Function to check leap year
+#Q1 Function to check leap year
 
 #function for checking the input year is leap year or not
 def checker(num):
