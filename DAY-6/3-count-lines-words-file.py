@@ -1,6 +1,6 @@
 # Q3 Count lines/words in file
 
-#reading the file and storing it in content.txt
+#reading the file and storing it in content
 with open("DAY-6/required files/example.txt", "r") as file:
     content = file.read()
 
