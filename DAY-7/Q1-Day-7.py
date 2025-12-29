@@ -1,4 +1,4 @@
-# Q7 Create class with attributes and print them
+# Q1 Create class with attributes and print them
 
 # Created Class with attributes
 class Car:
