@@ -5,7 +5,7 @@ class Employee:
     # Class variable (same for all instances)
     company = "Tech Corp"
     employee_count = 0
-    
+
     def __init__(self, name, salary): #contructor method
         # Instance variables (unique to each instance)
         self.name = name
