@@ -1,996 +1,874 @@
-<<<<<<< HEAD
-=======
 '''
-DAY 7: Python OOP Basics - Classes & Objects
+DAY 7: Python Object-Oriented Programming (OOP) Basics
 '''
 
 # =============================================================================
-# OBJECT-ORIENTED PROGRAMMING (OOP)
+# WHAT IS OOP?
 # =============================================================================
 '''
-OOP is a programming paradigm based on "objects" containing data and code.
-
-Four Pillars of OOP:
-1. Encapsulation - Bundling data and methods together
-2. Inheritance - Creating new classes from existing ones
-3. Polymorphism - Same interface, different implementations
-4. Abstraction - Hiding complex implementation details
+Object-Oriented Programming (OOP) is a programming paradigm based on "objects"
+which contain data (attributes) and code (methods).
 
 Key Concepts:
 - Class: Blueprint for creating objects
 - Object: Instance of a class
-- Attribute: Variable belonging to a class
-- Method: Function belonging to a class
+- Attribute: Data stored in class/object
+- Method: Function defined in a class
+
+Benefits:
+- Code reusability
+- Better organization
+- Easier maintenance
+- Real-world modeling
+- Encapsulation of data
 '''
 
 
 # =============================================================================
-# CLASSES AND OBJECTS - BASICS
+# CLASSES AND OBJECTS
 # =============================================================================
 
-# --- Creating a Simple Class ---
+# --- Basic Class Definition ---
 class Dog:
-    pass  # Empty class
+    """A simple Dog class"""
+    pass
 
-# Create object (instance) of class
+# Create object (instance)
 my_dog = Dog()
 print(type(my_dog))  # <class '__main__.Dog'>
 
 
 # --- Class with Attributes ---
+class Car:
+    """Car class with attributes"""
+    # Class attribute (shared by all instances)
+    wheels = 4
+    
+# Create objects
+car1 = Car()
+car2 = Car()
+
+print(car1.wheels)  # 4
+print(car2.wheels)  # 4
+
+# Modify class attribute
+Car.wheels = 6
+print(car1.wheels)  # 6
+print(car2.wheels)  # 6
+
+
+# --- Instance Attributes ---
 class Person:
-    # Class attributes (shared by all instances)
-    species = "Homo sapiens"
-    
-    # These are just default attributes (not instance-specific)
-    name = "Unknown"
-    age = 0
+    """Person class with instance attributes"""
+    pass
 
-# Create object
+# Add attributes to instance
 person1 = Person()
-print(person1.name)      # "Unknown"
-print(person1.species)   # "Homo sapiens"
+person1.name = "Alice"
+person1.age = 25
 
+person2 = Person()
+person2.name = "Bob"
+person2.age = 30
 
-# --- Class with Methods ---
-class Calculator:
-    def add(self, a, b):
-        return a + b
-    
-    def subtract(self, a, b):
-        return a - b
-
-# Create object and call methods
-calc = Calculator()
-result = calc.add(5, 3)
-print(result)  # 8
+print(person1.name)  # Alice
+print(person2.name)  # Bob
 
 
 # =============================================================================
-# THE __init__() CONSTRUCTOR
+# __init__ METHOD (Constructor)
 # =============================================================================
 '''
-__init__() is a special method called when object is created.
-- Automatically called during object creation
-- Used to initialize object attributes
-- 'self' refers to the instance being created
+__init__ is a special method called when object is created.
+Used to initialize object attributes.
 '''
 
 # --- Basic Constructor ---
-class Student:
+class Person:
     def __init__(self, name, age):
-        self.name = name  # Instance variable
-        self.age = age    # Instance variable
+        """Initialize person with name and age"""
+        self.name = name  # Instance attribute
+        self.age = age
 
-# Create objects with different values
-student1 = Student("Alice", 20)
-student2 = Student("Bob", 22)
+# Create objects
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
 
-print(student1.name)  # "Alice"
-print(student2.age)   # 22
+print(person1.name)  # Alice
+print(person2.age)   # 30
 
 
-# --- Constructor with Default Parameters ---
-class Book:
-    def __init__(self, title, author, pages=0):
-        self.title = title
-        self.author = author
-        self.pages = pages
+# --- Constructor with Default Values ---
+class Student:
+    def __init__(self, name, age=18, grade="A"):
+        self.name = name
+        self.age = age
+        self.grade = grade
 
-book1 = Book("Python Guide", "John Doe")
-book2 = Book("Data Science", "Jane Smith", 350)
+student1 = Student("Alice")
+student2 = Student("Bob", 20)
+student3 = Student("Charlie", 19, "B")
 
-print(book1.pages)  # 0 (default)
-print(book2.pages)  # 350
+print(student1.age)    # 18 (default)
+print(student2.age)    # 20
+print(student3.grade)  # B
+
+
+# --- Understanding 'self' ---
+'''
+'self' represents the instance of the class.
+- Must be first parameter in instance methods
+- Used to access instance attributes and methods
+- Can be named anything, but 'self' is convention
+'''
+
+class Example:
+    def __init__(self, value):
+        self.value = value  # self refers to current instance
+    
+    def show(self):
+        print(self.value)  # Access instance attribute
+
+obj = Example(10)
+obj.show()  # 10
 
 
 # =============================================================================
-# INSTANCE VARIABLES AND METHODS
+# INSTANCE METHODS
 # =============================================================================
+'''
+Methods are functions defined inside a class.
+Instance methods operate on instance data.
+'''
 
-# --- Instance Variables ---
-# Variables unique to each instance
-class Car:
-    def __init__(self, brand, model, year):
-        self.brand = brand    # Instance variable
-        self.model = model    # Instance variable
-        self.year = year      # Instance variable
-        self.mileage = 0      # Instance variable with default
+# --- Basic Instance Methods ---
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        """Calculate area"""
+        return self.width * self.height
+    
+    def perimeter(self):
+        """Calculate perimeter"""
+        return 2 * (self.width + self.height)
+    
+    def display(self):
+        """Display rectangle info"""
+        print(f"Width: {self.width}, Height: {self.height}")
+        print(f"Area: {self.area()}")
+        print(f"Perimeter: {self.perimeter()}")
 
-car1 = Car("Toyota", "Camry", 2020)
-car2 = Car("Honda", "Civic", 2021)
-
-car1.mileage = 15000
-car2.mileage = 8000
-
-print(car1.brand, car1.mileage)  # Toyota 15000
-print(car2.brand, car2.mileage)  # Honda 8000
+# Usage
+rect = Rectangle(5, 3)
+print(rect.area())       # 15
+print(rect.perimeter())  # 16
+rect.display()
 
 
-# --- Instance Methods ---
-# Methods that work with instance variables
+# --- Methods with Parameters ---
 class BankAccount:
     def __init__(self, owner, balance=0):
         self.owner = owner
         self.balance = balance
     
     def deposit(self, amount):
-        """Add money to account"""
-        self.balance += amount
-        return self.balance
+        """Deposit money"""
+        if amount > 0:
+            self.balance += amount
+            print(f"Deposited ${amount}. New balance: ${self.balance}")
+        else:
+            print("Invalid deposit amount")
     
     def withdraw(self, amount):
-        """Remove money from account"""
+        """Withdraw money"""
         if amount > self.balance:
-            return "Insufficient funds"
-        self.balance -= amount
-        return self.balance
+            print("Insufficient funds")
+        elif amount > 0:
+            self.balance -= amount
+            print(f"Withdrew ${amount}. New balance: ${self.balance}")
+        else:
+            print("Invalid withdrawal amount")
     
     def get_balance(self):
-        """Return current balance"""
+        """Get current balance"""
         return self.balance
 
-# Create and use object
+# Usage
 account = BankAccount("Alice", 1000)
-account.deposit(500)
-print(account.get_balance())  # 1500
-account.withdraw(200)
+account.deposit(500)    # Deposited $500. New balance: $1500
+account.withdraw(200)   # Withdrew $200. New balance: $1300
 print(account.get_balance())  # 1300
 
 
-# =============================================================================
-# CLASS WITH MULTIPLE METHODS
-# =============================================================================
+# --- Methods Calling Other Methods ---
+class Calculator:
+    def __init__(self):
+        self.result = 0
+    
+    def add(self, value):
+        self.result += value
+        return self
+    
+    def subtract(self, value):
+        self.result -= value
+        return self
+    
+    def multiply(self, value):
+        self.result *= value
+        return self
+    
+    def reset(self):
+        self.result = 0
+        return self
+    
+    def get_result(self):
+        return self.result
 
-class Rectangle:
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-    
-    def area(self):
-        """Calculate area"""
-        return self.length * self.width
-    
-    def perimeter(self):
-        """Calculate perimeter"""
-        return 2 * (self.length + self.width)
-    
-    def is_square(self):
-        """Check if rectangle is a square"""
-        return self.length == self.width
-    
-    def scale(self, factor):
-        """Scale the rectangle"""
-        self.length *= factor
-        self.width *= factor
-    
-    def display_info(self):
-        """Display rectangle information"""
-        print(f"Rectangle: {self.length} x {self.width}")
-        print(f"Area: {self.area()}")
-        print(f"Perimeter: {self.perimeter()}")
-
-# Usage
-rect = Rectangle(5, 3)
-print(rect.area())        # 15
-print(rect.perimeter())   # 16
-print(rect.is_square())   # False
-rect.display_info()
+# Method chaining
+calc = Calculator()
+result = calc.add(10).multiply(5).subtract(20).get_result()
+print(result)  # 30
 
 
 # =============================================================================
-# CLASS VARIABLES VS INSTANCE VARIABLES
+# CLASS ATTRIBUTES vs INSTANCE ATTRIBUTES
 # =============================================================================
 
 class Employee:
-    # Class variable (shared by ALL instances)
-    company_name = "Tech Corp"
+    # Class attribute (shared by all instances)
+    company = "TechCorp"
     employee_count = 0
     
     def __init__(self, name, salary):
-        # Instance variables (unique to each instance)
+        # Instance attributes (unique to each instance)
         self.name = name
         self.salary = salary
-        Employee.employee_count += 1  # Modify class variable
-    
-    def display_info(self):
-        print(f"Name: {self.name}")
-        print(f"Salary: ${self.salary}")
-        print(f"Company: {Employee.company_name}")
+        Employee.employee_count += 1  # Modify class attribute
 
-# Create objects
+# Create employees
 emp1 = Employee("Alice", 50000)
 emp2 = Employee("Bob", 60000)
 
-# Class variable is same for all instances
-print(emp1.company_name)  # "Tech Corp"
-print(emp2.company_name)  # "Tech Corp"
+# Access class attribute
+print(emp1.company)  # TechCorp
+print(emp2.company)  # TechCorp
+print(Employee.company)  # TechCorp
+
+# Access instance attributes
+print(emp1.name)     # Alice
+print(emp2.salary)   # 60000
+
+# Modify class attribute
+Employee.company = "NewTech"
+print(emp1.company)  # NewTech
+print(emp2.company)  # NewTech
+
+# Count employees
 print(Employee.employee_count)  # 2
 
-# Instance variables are different
-print(emp1.name)  # "Alice"
-print(emp2.name)  # "Bob"
 
-# Modifying class variable affects all instances
-Employee.company_name = "New Tech Corp"
-print(emp1.company_name)  # "New Tech Corp"
-print(emp2.company_name)  # "New Tech Corp"
+# --- Instance Attribute Shadows Class Attribute ---
+class Example:
+    value = 10  # Class attribute
 
-# Modifying through instance creates new instance variable
-emp1.company_name = "Different Corp"
-print(emp1.company_name)  # "Different Corp" (instance variable)
-print(emp2.company_name)  # "New Tech Corp" (class variable)
-print(Employee.company_name)  # "New Tech Corp" (class variable)
+obj1 = Example()
+obj2 = Example()
+
+print(obj1.value)  # 10 (from class)
+print(obj2.value)  # 10 (from class)
+
+# Create instance attribute (shadows class attribute for this instance)
+obj1.value = 20
+print(obj1.value)  # 20 (from instance)
+print(obj2.value)  # 10 (still from class)
+print(Example.value)  # 10 (class attribute unchanged)
 
 
 # =============================================================================
-# INHERITANCE
+# CLASS METHODS
 # =============================================================================
 '''
-Inheritance allows a class to inherit attributes and methods from another class.
-
-- Parent Class (Base/Super Class): Class being inherited from
-- Child Class (Derived/Sub Class): Class that inherits
-
-Benefits:
-- Code reusability
-- Logical hierarchy
-- Method overriding
+Class methods work with class attributes.
+Defined using @classmethod decorator.
+First parameter is 'cls' (refers to class, not instance).
 '''
 
-# --- Basic Inheritance ---
-# Parent class
-class Animal:
-    def __init__(self, name, species):
+class Student:
+    school_name = "ABC School"  # Class attribute
+    student_count = 0
+    
+    def __init__(self, name, grade):
         self.name = name
-        self.species = species
+        self.grade = grade
+        Student.student_count += 1
     
-    def make_sound(self):
-        return "Some generic sound"
+    @classmethod
+    def change_school(cls, new_school):
+        """Change school name for all students"""
+        cls.school_name = new_school
     
-    def info(self):
-        return f"{self.name} is a {self.species}"
+    @classmethod
+    def get_student_count(cls):
+        """Get total number of students"""
+        return cls.student_count
+    
+    @classmethod
+    def from_string(cls, student_string):
+        """Alternative constructor from string"""
+        name, grade = student_string.split(",")
+        return cls(name, int(grade))
 
-# Child class inherits from Animal
-class Dog(Animal):
-    def __init__(self, name, breed):
+# Usage
+student1 = Student("Alice", 10)
+student2 = Student("Bob", 11)
+
+print(Student.school_name)  # ABC School
+Student.change_school("XYZ School")
+print(student1.school_name)  # XYZ School
+
+print(Student.get_student_count())  # 2
+
+# Alternative constructor
+student3 = Student.from_string("Charlie,12")
+print(student3.name)   # Charlie
+print(student3.grade)  # 12
+
+
+# =============================================================================
+# STATIC METHODS
+# =============================================================================
+'''
+Static methods don't access instance or class attributes.
+Defined using @staticmethod decorator.
+No 'self' or 'cls' parameter.
+Used for utility functions related to the class.
+'''
+
+class MathOperations:
+    @staticmethod
+    def add(a, b):
+        """Add two numbers"""
+        return a + b
+    
+    @staticmethod
+    def multiply(a, b):
+        """Multiply two numbers"""
+        return a * b
+    
+    @staticmethod
+    def is_even(num):
+        """Check if number is even"""
+        return num % 2 == 0
+
+# Usage (no need to create instance)
+print(MathOperations.add(5, 3))        # 8
+print(MathOperations.multiply(4, 5))   # 20
+print(MathOperations.is_even(10))      # True
+
+# Can also call from instance (but not recommended)
+math = MathOperations()
+print(math.add(2, 3))  # 5
+
+
+# --- When to Use Each ---
+class Example:
+    class_var = "class"
+    
+    def instance_method(self):
+        """Use when you need access to instance data"""
+        return self.instance_var
+    
+    @classmethod
+    def class_method(cls):
+        """Use when you need access to class data"""
+        return cls.class_var
+    
+    @staticmethod
+    def static_method():
+        """Use when you don't need instance or class data"""
+        return "independent function"
+
+
+# =============================================================================
+# ENCAPSULATION (Public, Protected, Private)
+# =============================================================================
+'''
+Encapsulation is hiding internal details and providing public interface.
+
+Naming Conventions:
+- public: normal_attribute (accessible everywhere)
+- protected: _protected_attribute (convention: internal use)
+- private: __private_attribute (name mangling applied)
+'''
+
+# --- Public Attributes ---
+class PublicExample:
+    def __init__(self):
+        self.public_var = "I'm public"
+
+obj = PublicExample()
+print(obj.public_var)  # Accessible
+obj.public_var = "Modified"  # Can modify
+
+
+# --- Protected Attributes (Convention) ---
+class ProtectedExample:
+    def __init__(self):
+        self._protected_var = "I'm protected (by convention)"
+
+obj = ProtectedExample()
+print(obj._protected_var)  # Still accessible (Python doesn't enforce)
+# But convention says: don't access from outside
+
+
+# --- Private Attributes (Name Mangling) ---
+class PrivateExample:
+    def __init__(self):
+        self.__private_var = "I'm private"
+    
+    def get_private(self):
+        """Public method to access private attribute"""
+        return self.__private_var
+    
+    def set_private(self, value):
+        """Public method to modify private attribute"""
+        self.__private_var = value
+
+obj = PrivateExample()
+# print(obj.__private_var)  # AttributeError
+print(obj.get_private())    # I'm private (through method)
+
+# Name mangling: still accessible but discouraged
+print(obj._PrivateExample__private_var)  # I'm private
+
+
+# --- Practical Encapsulation Example ---
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner           # Public
+        self._account_number = None  # Protected
+        self.__balance = balance     # Private
+    
+    def deposit(self, amount):
+        """Public method to deposit"""
+        if amount > 0:
+            self.__balance += amount
+            return True
+        return False
+    
+    def withdraw(self, amount):
+        """Public method to withdraw"""
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            return True
+        return False
+    
+    def get_balance(self):
+        """Public method to view balance"""
+        return self.__balance
+    
+    def __calculate_interest(self):
+        """Private method (internal use only)"""
+        return self.__balance * 0.05
+
+# Usage
+account = BankAccount("Alice", 1000)
+print(account.owner)           # Alice (public)
+account.deposit(500)           # OK (public method)
+print(account.get_balance())   # 1500 (through public method)
+# print(account.__balance)     # AttributeError (private)
+
+
+# =============================================================================
+# PROPERTY DECORATORS (Getters and Setters)
+# =============================================================================
+'''
+Properties allow controlled access to attributes.
+Makes private attributes accessible like public attributes.
+'''
+
+# --- Without Properties (Manual Getters/Setters) ---
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+    
+    def get_age(self):
+        return self.__age
+    
+    def set_age(self, age):
+        if age > 0:
+            self.__age = age
+        else:
+            raise ValueError("Age must be positive")
+
+person = Person("Alice", 25)
+print(person.get_age())  # 25
+person.set_age(26)
+print(person.get_age())  # 26
+
+
+# --- With Properties (Pythonic Way) ---
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+    
+    @property
+    def age(self):
+        """Getter for age"""
+        return self.__age
+    
+    @age.setter
+    def age(self, age):
+        """Setter for age"""
+        if age > 0 and age < 120:
+            self.__age = age
+        else:
+            raise ValueError("Age must be between 0 and 120")
+    
+    @age.deleter
+    def age(self):
+        """Deleter for age"""
+        print("Deleting age")
+        del self.__age
+
+# Usage (looks like accessing public attribute)
+person = Person("Alice", 25)
+print(person.age)      # 25 (calls getter)
+person.age = 26        # Calls setter
+print(person.age)      # 26
+# person.age = -5      # ValueError
+del person.age         # Calls deleter
+
+
+# --- Read-Only Property ---
+class Circle:
+    def __init__(self, radius):
+        self.__radius = radius
+    
+    @property
+    def radius(self):
+        return self.__radius
+    
+    @property
+    def area(self):
+        """Read-only property (no setter)"""
+        return 3.14159 * self.__radius ** 2
+    
+    @property
+    def circumference(self):
+        """Read-only property"""
+        return 2 * 3.14159 * self.__radius
+
+circle = Circle(5)
+print(circle.area)            # 78.53975
+print(circle.circumference)   # 31.4159
+# circle.area = 100           # AttributeError (no setter)
+
+
+# --- Computed Properties ---
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    @property
+    def area(self):
+        """Computed on access"""
+        return self.width * self.height
+    
+    @property
+    def perimeter(self):
+        """Computed on access"""
+        return 2 * (self.width + self.height)
+
+rect = Rectangle(5, 3)
+print(rect.area)       # 15
+rect.width = 10        # Modify width
+print(rect.area)       # 30 (automatically updated)
+
+
+# =============================================================================
+# __str__ and __repr__ METHODS
+# =============================================================================
+'''
+__str__: Human-readable string representation
+__repr__: Developer-friendly representation (for debugging)
+'''
+
+# --- Without __str__ and __repr__ ---
+class Person:
+    def __init__(self, name, age):
         self.name = name
-        self.species = "Dog"
-        self.breed = breed
-    
-    # Child has access to parent methods
-    # Can also add its own methods
-    def fetch(self):
-        return f"{self.name} is fetching the ball!"
+        self.age = age
 
-# Create child object
-dog = Dog("Buddy", "Golden Retriever")
-print(dog.info())        # "Buddy is a Dog" (inherited method)
-print(dog.fetch())       # "Buddy is fetching the ball!" (own method)
+person = Person("Alice", 25)
+print(person)  # <__main__.Person object at 0x...>
 
 
-# --- Inheritance with Multiple Classes ---
-# Parent class
-class Vehicle:
-    def __init__(self, brand, model):
-        self.brand = brand
-        self.model = model
-    
-    def start(self):
-        return f"{self.brand} {self.model} is starting"
-    
-    def stop(self):
-        return f"{self.brand} {self.model} is stopping"
-
-# Child class 1
-class Car(Vehicle):
-    def __init__(self, brand, model, doors):
-        self.brand = brand
-        self.model = model
-        self.doors = doors
-    
-    def honk(self):
-        return "Beep beep!"
-
-# Child class 2
-class Motorcycle(Vehicle):
-    def __init__(self, brand, model, has_sidecar):
-        self.brand = brand
-        self.model = model
-        self.has_sidecar = has_sidecar
-    
-    def wheelie(self):
-        return "Doing a wheelie!"
-
-# Create objects
-car = Car("Toyota", "Camry", 4)
-bike = Motorcycle("Harley", "Davidson", False)
-
-print(car.start())    # Inherited method
-print(car.honk())     # Own method
-print(bike.start())   # Inherited method
-print(bike.wheelie()) # Own method
-
-
-# =============================================================================
-# METHOD OVERRIDING
-# =============================================================================
-'''
-Method overriding: Child class provides its own implementation of parent's method.
-- Same method name as parent
-- Different implementation
-- Child's version is used when called on child object
-'''
-
-class Animal:
-    def __init__(self, name):
-        self.name = name
-    
-    def speak(self):
-        return "Some generic animal sound"
-    
-    def info(self):
-        return f"This is {self.name}"
-
-# Child class overrides speak() method
-class Dog(Animal):
-    def speak(self):
-        return f"{self.name} says Woof!"
-
-class Cat(Animal):
-    def speak(self):
-        return f"{self.name} says Meow!"
-
-class Cow(Animal):
-    def speak(self):
-        return f"{self.name} says Moo!"
-
-# Create objects
-dog = Dog("Buddy")
-cat = Cat("Whiskers")
-cow = Cow("Bessie")
-
-# Each uses their own overridden method
-print(dog.speak())  # "Buddy says Woof!"
-print(cat.speak())  # "Whiskers says Meow!"
-print(cow.speak())  # "Bessie says Moo!"
-
-# Inherited method still works
-print(dog.info())   # "This is Buddy"
-
-
-# =============================================================================
-# THE super() FUNCTION
-# =============================================================================
-'''
-super() allows you to call parent class methods from child class.
-- Access parent's methods and constructor
-- Useful when extending (not replacing) parent functionality
-- Proper way to initialize parent class
-'''
-
-# --- Using super() in Constructor ---
+# --- With __str__ ---
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
     
-    def display(self):
-        print(f"Name: {self.name}, Age: {self.age}")
-
-class Student(Person):
-    def __init__(self, name, age, student_id):
-        super().__init__(name, age)  # Call parent constructor
-        self.student_id = student_id
-    
-    def display(self):
-        super().display()  # Call parent method
-        print(f"Student ID: {self.student_id}")
-
-# Create student
-student = Student("Alice", 20, "S12345")
-student.display()
-# Output:
-# Name: Alice, Age: 20
-# Student ID: S12345
-
-
-# --- Using super() to Extend Methods ---
-class Rectangle:
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-    
-    def area(self):
-        return self.length * self.width
-    
-    def display(self):
-        print(f"Rectangle: {self.length} x {self.width}")
-        print(f"Area: {self.area()}")
-
-class ColoredRectangle(Rectangle):
-    def __init__(self, length, width, color):
-        super().__init__(length, width)  # Initialize parent
-        self.color = color
-    
-    def display(self):
-        super().display()  # Call parent's display
-        print(f"Color: {self.color}")  # Add extra info
-
-# Create colored rectangle
-rect = ColoredRectangle(5, 3, "Red")
-rect.display()
-# Output:
-# Rectangle: 5 x 3
-# Area: 15
-# Color: Red
-
-
-# --- super() with Method Enhancement ---
-class BankAccount:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
-    
-    def deposit(self, amount):
-        self.balance += amount
-        return self.balance
-
-class SavingsAccount(BankAccount):
-    def __init__(self, owner, balance, interest_rate):
-        super().__init__(owner, balance)
-        self.interest_rate = interest_rate
-    
-    def deposit(self, amount):
-        # Add interest before depositing
-        bonus = amount * self.interest_rate
-        total = amount + bonus
-        return super().deposit(total)  # Call parent's deposit
-
-# Create savings account
-savings = SavingsAccount("Alice", 1000, 0.05)
-print(savings.balance)  # 1000
-savings.deposit(100)    # Deposits 100 + 5 (5% interest)
-print(savings.balance)  # 1105
-
-
-# =============================================================================
-# SPECIAL METHODS (MAGIC METHODS)
-# =============================================================================
-'''
-Special methods with double underscores (dunder methods).
-Allow operator overloading and special behavior.
-'''
-
-# --- __str__() and __repr__() ---
-class Book:
-    def __init__(self, title, author):
-        self.title = title
-        self.author = author
-    
     def __str__(self):
-        """String representation for users"""
-        return f"'{self.title}' by {self.author}"
+        """Return string for end users"""
+        return f"{self.name}, {self.age} years old"
+
+person = Person("Alice", 25)
+print(person)         # Alice, 25 years old
+print(str(person))    # Alice, 25 years old
+
+
+# --- With __repr__ ---
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
     
     def __repr__(self):
-        """String representation for developers"""
-        return f"Book('{self.title}', '{self.author}')"
+        """Return string for developers"""
+        return f"Person(name='{self.name}', age={self.age})"
 
-book = Book("Python Guide", "John Doe")
-print(str(book))   # 'Python Guide' by John Doe
-print(repr(book))  # Book('Python Guide', 'John Doe')
+person = Person("Alice", 25)
+print(repr(person))   # Person(name='Alice', age=25)
+print([person])       # [Person(name='Alice', age=25)]
 
 
-# --- __len__() ---
-class Playlist:
-    def __init__(self):
-        self.songs = []
+# --- With Both ---
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
     
-    def add_song(self, song):
-        self.songs.append(song)
+    def __str__(self):
+        """User-friendly"""
+        return f"{self.name}, {self.age} years old"
     
-    def __len__(self):
-        return len(self.songs)
+    def __repr__(self):
+        """Developer-friendly"""
+        return f"Person('{self.name}', {self.age})"
 
-playlist = Playlist()
-playlist.add_song("Song 1")
-playlist.add_song("Song 2")
-print(len(playlist))  # 2
+person = Person("Alice", 25)
+print(str(person))    # Alice, 25 years old
+print(repr(person))   # Person('Alice', 25)
+print(person)         # Alice, 25 years old (uses __str__)
 
 
-# --- Operator Overloading ---
+# =============================================================================
+# SPECIAL/MAGIC METHODS (Dunder Methods)
+# =============================================================================
+'''
+Special methods start and end with double underscores (__).
+Allow customization of built-in behavior.
+'''
+
+# --- Arithmetic Operators ---
 class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
     
     def __add__(self, other):
-        """Overload + operator"""
+        """Enable + operator"""
         return Point(self.x + other.x, self.y + other.y)
+    
+    def __sub__(self, other):
+        """Enable - operator"""
+        return Point(self.x - other.x, self.y - other.y)
+    
+    def __mul__(self, scalar):
+        """Enable * operator"""
+        return Point(self.x * scalar, self.y * scalar)
     
     def __str__(self):
         return f"Point({self.x}, {self.y})"
 
 p1 = Point(1, 2)
 p2 = Point(3, 4)
-p3 = p1 + p2  # Uses __add__ method
-print(p3)  # Point(4, 6)
+
+p3 = p1 + p2      # Calls __add__
+print(p3)         # Point(4, 6)
+
+p4 = p2 - p1      # Calls __sub__
+print(p4)         # Point(2, 2)
+
+p5 = p1 * 3       # Calls __mul__
+print(p5)         # Point(3, 6)
 
 
-# =============================================================================
-# ENCAPSULATION - PUBLIC, PROTECTED, PRIVATE
-# =============================================================================
-'''
-Python naming conventions for access control:
-- public: normal name (accessible everywhere)
-- _protected: single underscore (convention: internal use)
-- __private: double underscore (name mangling, harder to access)
-'''
-
-class BankAccount:
-    def __init__(self, owner, balance):
-        self.owner = owner           # Public
-        self._account_type = "Savings"  # Protected (convention)
-        self.__pin = 1234            # Private (name mangled)
+# --- Comparison Operators ---
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
     
-    def get_pin(self):
-        """Public method to access private variable"""
-        return self.__pin
+    def __eq__(self, other):
+        """Enable == operator"""
+        return self.age == other.age
     
-    def set_pin(self, new_pin):
-        """Public method to modify private variable"""
-        if len(str(new_pin)) == 4:
-            self.__pin = new_pin
-        else:
-            print("PIN must be 4 digits")
-
-account = BankAccount("Alice", 1000)
-print(account.owner)          # Public: accessible
-print(account._account_type)  # Protected: accessible but shouldn't
-# print(account.__pin)        # Private: AttributeError
-
-# Access private through public method
-print(account.get_pin())      # 1234
-account.set_pin(5678)
-print(account.get_pin())      # 5678
-
-
-# =============================================================================
-# PROPERTY DECORATORS (@property)
-# =============================================================================
-'''
-@property decorator creates getter, setter, and deleter methods.
-Allows controlled access to attributes.
-'''
-
-class Circle:
-    def __init__(self, radius):
-        self._radius = radius
+    def __lt__(self, other):
+        """Enable < operator"""
+        return self.age < other.age
     
-    @property
-    def radius(self):
-        """Getter for radius"""
-        return self._radius
+    def __le__(self, other):
+        """Enable <= operator"""
+        return self.age <= other.age
     
-    @radius.setter
-    def radius(self, value):
-        """Setter for radius"""
-        if value > 0:
-            self._radius = value
-        else:
-            raise ValueError("Radius must be positive")
+    def __gt__(self, other):
+        """Enable > operator"""
+        return self.age > other.age
     
-    @property
-    def area(self):
-        """Calculated property"""
-        return 3.14159 * self._radius ** 2
+    def __ge__(self, other):
+        """Enable >= operator"""
+        return self.age >= other.age
     
-    @property
-    def circumference(self):
-        """Calculated property"""
-        return 2 * 3.14159 * self._radius
+    def __str__(self):
+        return f"{self.name} ({self.age})"
+
+p1 = Person("Alice", 25)
+p2 = Person("Bob", 30)
+p3 = Person("Charlie", 25)
+
+print(p1 == p3)  # True
+print(p1 < p2)   # True
+print(p2 > p1)   # True
+
+
+# --- Container Methods ---
+class Basket:
+    def __init__(self):
+        self.items = []
+    
+    def __len__(self):
+        """Enable len() function"""
+        return len(self.items)
+    
+    def __getitem__(self, index):
+        """Enable indexing basket[0]"""
+        return self.items[index]
+    
+    def __setitem__(self, index, value):
+        """Enable assignment basket[0] = value"""
+        self.items[index] = value
+    
+    def __contains__(self, item):
+        """Enable 'in' operator"""
+        return item in self.items
+    
+    def add(self, item):
+        self.items.append(item)
+
+basket = Basket()
+basket.add("apple")
+basket.add("banana")
+basket.add("orange")
+
+print(len(basket))        # 3
+print(basket[0])          # apple
+basket[1] = "grape"       # Modify
+print(basket[1])          # grape
+print("apple" in basket)  # True
+
+
+# --- Callable Objects ---
+class Multiplier:
+    def __init__(self, factor):
+        self.factor = factor
+    
+    def __call__(self, x):
+        """Make object callable like function"""
+        return x * self.factor
+
+multiply_by_5 = Multiplier(5)
+print(multiply_by_5(10))  # 50
+print(multiply_by_5(3))   # 15
+
+
+# --- Context Manager ---
+class FileManager:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
+    
+    def __enter__(self):
+        """Called when entering 'with' block"""
+        self.file = open(self.filename, self.mode)
+        return self.file
+    
+    def __exit__(self, exc_type, exc_value, traceback):
+        """Called when exiting 'with' block"""
+        if self.file:
+            self.file.close()
 
 # Usage
-circle = Circle(5)
-print(circle.radius)        # 5 (uses getter)
-print(circle.area)          # 78.53975 (calculated)
-
-circle.radius = 10          # Uses setter
-print(circle.radius)        # 10
-print(circle.area)          # 314.159
-
-# circle.radius = -5        # ValueError
+with FileManager("test.txt", "w") as f:
+    f.write("Hello, World!")
 
 
 # =============================================================================
-# CLASS METHODS AND STATIC METHODS
-# =============================================================================
-
-# --- @classmethod ---
-# Works with class itself, not instances
-class Date:
-    def __init__(self, year, month, day):
-        self.year = year
-        self.month = month
-        self.day = day
-    
-    @classmethod
-    def from_string(cls, date_string):
-        """Alternative constructor"""
-        year, month, day = map(int, date_string.split('-'))
-        return cls(year, month, day)
-    
-    @classmethod
-    def today(cls):
-        """Factory method"""
-        import datetime
-        today = datetime.date.today()
-        return cls(today.year, today.month, today.day)
-
-# Regular constructor
-date1 = Date(2025, 12, 27)
-
-# Class method as alternative constructor
-date2 = Date.from_string("2025-12-27")
-
-# Class method as factory
-date3 = Date.today()
-
-
-# --- @staticmethod ---
-# Doesn't work with class or instance, just utility function
-class MathOperations:
-    @staticmethod
-    def add(a, b):
-        return a + b
-    
-    @staticmethod
-    def multiply(a, b):
-        return a * b
-    
-    @staticmethod
-    def is_even(num):
-        return num % 2 == 0
-
-# Call without creating instance
-print(MathOperations.add(5, 3))      # 8
-print(MathOperations.is_even(10))    # True
-
-
-# =============================================================================
-# MULTIPLE INHERITANCE
+# CLASS INHERITANCE (Will be covered in OOP Advanced)
 # =============================================================================
 '''
-A class can inherit from multiple parent classes.
+Brief preview - detailed in next lesson:
+
+class Parent:
+    def method(self):
+        pass
+
+class Child(Parent):  # Child inherits from Parent
+    def method(self):
+        pass
 '''
-
-class Flyer:
-    def fly(self):
-        return "Flying in the sky"
-
-class Swimmer:
-    def swim(self):
-        return "Swimming in water"
-
-class Duck(Flyer, Swimmer):
-    def __init__(self, name):
-        self.name = name
-    
-    def quack(self):
-        return "Quack quack!"
-
-# Duck inherits from both Flyer and Swimmer
-duck = Duck("Donald")
-print(duck.fly())    # From Flyer
-print(duck.swim())   # From Swimmer
-print(duck.quack())  # Own method
 
 
 # =============================================================================
 # KEY TAKEAWAYS
 # =============================================================================
 '''
-CLASSES AND OBJECTS:
-✓ Class: Blueprint for creating objects
+CLASSES & OBJECTS:
+✓ Class: Blueprint for objects
 ✓ Object: Instance of a class
-✓ Create class: class ClassName:
-✓ Create object: obj = ClassName()
+✓ __init__: Constructor to initialize objects
+✓ self: Reference to current instance
 
-CONSTRUCTOR:
-✓ __init__(self, params): Initialize object
-✓ self: Refers to current instance
-✓ Called automatically when object is created
-
-VARIABLES:
-✓ Instance variables: Unique to each object (self.var)
-✓ Class variables: Shared by all objects (ClassName.var)
+ATTRIBUTES:
+✓ Class attributes: Shared by all instances
+✓ Instance attributes: Unique to each instance
+✓ Access with dot notation: object.attribute
 
 METHODS:
-✓ Instance methods: Work with instance (self parameter)
-✓ Class methods: Work with class (@classmethod, cls parameter)
-✓ Static methods: Utility functions (@staticmethod, no self/cls)
-
-INHERITANCE:
-✓ class Child(Parent): Inherit from parent
-✓ Access parent: super()
-✓ Method overriding: Child redefines parent method
-✓ Multiple inheritance: class Child(Parent1, Parent2)
+✓ Instance methods: Operate on instance (self)
+✓ Class methods: Operate on class (@classmethod, cls)
+✓ Static methods: Independent utility (@staticmethod)
 
 ENCAPSULATION:
-✓ public: normal_name
-✓ protected: _protected_name (convention)
-✓ private: __private_name (name mangling)
+✓ Public: normal_name (accessible everywhere)
+✓ Protected: _name (convention: internal use)
+✓ Private: __name (name mangling)
+✓ Use @property for controlled access
 
 SPECIAL METHODS:
-✓ __init__(): Constructor
-✓ __str__(): String representation
-✓ __len__(): Length
-✓ __add__(): Operator overloading
+✓ __init__: Constructor
+✓ __str__: String representation (user)
+✓ __repr__: String representation (developer)
+✓ __add__, __sub__: Arithmetic operators
+✓ __eq__, __lt__: Comparison operators
+✓ __len__, __getitem__: Container methods
+✓ __call__: Make object callable
 
 BEST PRACTICES:
-✓ Use __init__ to initialize attributes
-✓ Use self for instance attributes/methods
-✓ Use super() to call parent methods
-✓ One class per file for large projects
-✓ Use descriptive class names (PascalCase)
-✓ Use @property for controlled attribute access
+- Use meaningful class and method names
+- Keep classes focused (single responsibility)
+- Use properties instead of getters/setters
+- Implement __str__ and __repr__ for debugging
+- Use private attributes for internal data
+- Document classes and methods with docstrings
+- Follow naming conventions (PascalCase for classes)
 '''
-
-
-# =============================================================================
-# PRACTICE QUESTIONS
-# =============================================================================
-'''
-1. Create class with attributes and print them
-2. Create class with method that returns value
-3. Create multiple objects from same class
-4. Class with __init__ constructor
-5. Class with instance variables and methods
-6. Create class with multiple methods
-7. Class inheritance (parent and child class)
-8. Method overriding in child class
-9. Class with class variables vs instance variables
-10. Use super() in inheritance
-'''
-
-# --- Question 1: Create class with attributes and print them ---
-class Car:
-    brand = "Toyota"
-    model = "Camry"
-    year = 2020
-
-car = Car()
-print(f"Brand: {car.brand}")
-print(f"Model: {car.model}")
-print(f"Year: {car.year}")
-
-
-# --- Question 2: Create class with method that returns value ---
-class Calculator:
-    def multiply(self, a, b):
-        return a * b
-
-calc = Calculator()
-result = calc.multiply(5, 3)
-print(f"Result: {result}")  # 15
-
-
-# --- Question 3: Create multiple objects from same class ---
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-student1 = Student("Alice", 20)
-student2 = Student("Bob", 22)
-student3 = Student("Charlie", 21)
-
-print(f"{student1.name} is {student1.age} years old")
-print(f"{student2.name} is {student2.age} years old")
-print(f"{student3.name} is {student3.age} years old")
-
-
-# --- Question 4: Class with __init__ constructor ---
-class Book:
-    def __init__(self, title, author, pages):
-        self.title = title
-        self.author = author
-        self.pages = pages
-        print(f"Book '{self.title}' created!")
-
-book = Book("Python Guide", "John Doe", 350)
-print(f"Title: {book.title}")
-print(f"Author: {book.author}")
-print(f"Pages: {book.pages}")
-
-
-# --- Question 5: Class with instance variables and methods ---
-class BankAccount:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
-    
-    def deposit(self, amount):
-        self.balance += amount
-        print(f"Deposited ${amount}. New balance: ${self.balance}")
-    
-    def withdraw(self, amount):
-        if amount > self.balance:
-            print("Insufficient funds!")
-        else:
-            self.balance -= amount
-            print(f"Withdrew ${amount}. New balance: ${self.balance}")
-    
-    def show_balance(self):
-        print(f"{self.owner}'s balance: ${self.balance}")
-
-account = BankAccount("Alice", 1000)
-account.show_balance()
-account.deposit(500)
-account.withdraw(200)
-account.show_balance()
-
-
-# --- Question 6: Create class with multiple methods ---
-class Rectangle:
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-    
-    def area(self):
-        return self.length * self.width
-    
-    def perimeter(self):
-        return 2 * (self.length + self.width)
-    
-    def is_square(self):
-        return self.length == self.width
-    
-    def display_info(self):
-        print(f"Length: {self.length}, Width: {self.width}")
-        print(f"Area: {self.area()}")
-        print(f"Perimeter: {self.perimeter()}")
-        print(f"Is Square: {self.is_square()}")
-
-rect = Rectangle(5, 3)
-rect.display_info()
-
-
-# --- Question 7: Class inheritance (parent and child class) ---
-class Animal:
-    def __init__(self, name, species):
-        self.name = name
-        self.species = species
-    
-    def show_info(self):
-        print(f"Name: {self.name}")
-        print(f"Species: {self.species}")
-
-class Dog(Animal):
-    def __init__(self, name, breed):
-        self.name = name
-        self.species = "Dog"
-        self.breed = breed
-    
-    def bark(self):
-        print(f"{self.name} says: Woof!")
-
-dog = Dog("Buddy", "Golden Retriever")
-dog.show_info()  # Inherited method
-dog.bark()       # Own method
-
-
-# --- Question 8: Method overriding in child class ---
-class Vehicle:
-    def __init__(self, brand):
-        self.brand = brand
-    
-    def start(self):
-        print(f"{self.brand} vehicle is starting")
-
-class Car(Vehicle):
-    def start(self):  # Override parent method
-        print(f"{self.brand} car is starting with key")
-
-class Bike(Vehicle):
-    def start(self):  # Override parent method
-        print(f"{self.brand} bike is starting with kick")
-
-car = Car("Toyota")
-bike = Bike("Honda")
-
-car.start()   # Toyota car is starting with key
-bike.start()  # Honda bike is starting with kick
-
-
-# --- Question 9: Class with class variables vs instance variables ---
-class Employee:
-    # Class variable (shared by all instances)
-    company = "Tech Corp"
-    employee_count = 0
-    
-    def __init__(self, name, salary):
-        # Instance variables (unique to each instance)
-        self.name = name
-        self.salary = salary
-        Employee.employee_count += 1
-    
-    def display_info(self):
-        print(f"Name: {self.name}")
-        print(f"Salary: ${self.salary}")
-        print(f"Company: {Employee.company}")
-        print(f"Total Employees: {Employee.employee_count}")
-
-emp1 = Employee("Alice", 50000)
-emp2 = Employee("Bob", 60000)
-
-print("Employee 1:")
-emp1.display_info()
-print("\nEmployee 2:")
-emp2.display_info()
-
-# Class variable is same for both
-print(f"\nCompany: {Employee.company}")
-print(f"Total Employees: {Employee.employee_count}")
-
-
-# --- Question 10: Use super() in inheritance ---
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    
-    def display(self):
-        print(f"Name: {self.name}")
-        print(f"Age: {self.age}")
-
-class Student(Person):
-    def __init__(self, name, age, student_id, grade):
-        super().__init__(name, age)  # Call parent constructor
-        self.student_id = student_id
-        self.grade = grade
-    
-    def display(self):
-        super().display()  # Call parent method
-        print(f"Student ID: {self.student_id}")
-        print(f"Grade: {self.grade}")
-
-class Teacher(Person):
-    def __init__(self, name, age, employee_id, subject):
-        super().__init__(name, age)  # Call parent constructor
-        self.employee_id = employee_id
-        self.subject = subject
-    
-    def display(self):
-        super().display()  # Call parent method
-        print(f"Employee ID: {self.employee_id}")
-        print(f"Subject: {self.subject}")
-
-print("Student Information:")
-student = Student("Alice", 20, "S12345", "A")
-student.display()
-
-print("\nTeacher Information:")
-teacher = Teacher("Mr. Smith", 35, "T98765", "Mathematics")
-teacher.display()
->>>>>>> d2cdb0f1161fbd85058bd8c4341b00cc1e2eb9a6
