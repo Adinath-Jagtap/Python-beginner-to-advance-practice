@@ -3,7 +3,7 @@
 # A decorator is a function that takes another function and returns a new function.
 # Decorator 1: prints the function's name before calling it
 def print_name(func):
-    # `wrapper` will replace the original function
+    # wrapper will replace the original function
     def wrapper():
         # func.__name__ gives the name of the original function as text
         print("Function name:", func.__name__)
@@ -14,7 +14,7 @@ def print_name(func):
 
 # Decorator 2: prints a "Start" message, calls the function, then prints "End"
 def start_end(func):
-    # `wrapper` replaces the original function
+    # wrapper replaces the original function
     def wrapper():
         print("Start")    # message before the original function runs
         func()            # run the original function
