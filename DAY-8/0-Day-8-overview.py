@@ -953,7 +953,7 @@ BEST PRACTICES:
 ✓ Keep decorators simple and focused
 ✓ Use generator expressions for simple cases
 ✓ Document what decorators do
-'''
+'''    
 
 # =============================================================================
 # PYTHON PRACTICE QUESTIONS (Decorators, Generators, Iterators)
