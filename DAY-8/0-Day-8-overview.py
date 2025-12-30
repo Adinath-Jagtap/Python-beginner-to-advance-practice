@@ -954,3 +954,19 @@ BEST PRACTICES:
 ✓ Use generator expressions for simple cases
 ✓ Document what decorators do
 '''
+
+# =============================================================================
+# PYTHON PRACTICE QUESTIONS (Decorators, Generators, Iterators)
+# =============================================================================
+'''
+1. Simple decorator that prints the function name when it is called
+2. Create a decorator to measure execution time of a function
+3. Create a decorator that accepts arguments
+4. Create a generator that yields squares of numbers
+5. Create a generator for Fibonacci sequence
+6. Create a custom iterator class using __iter__ and __next__
+7. Difference between generator expression and list comprehension
+8. Use yield to create a custom range() function
+9. Create a decorator to cache function results
+10. Chain multiple decorators on a single function
+'''
