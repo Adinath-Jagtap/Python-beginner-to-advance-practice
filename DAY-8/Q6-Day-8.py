@@ -11,6 +11,7 @@ class Iterator:
         - Iterator: Object that produces values one at a time
     '''
     def __iter__(self): #makes object a iterator
+         # This object is its own iterator, so return self
         return self
 
     def __next__(self): #returns next value if value exists
