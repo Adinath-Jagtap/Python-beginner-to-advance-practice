@@ -1,6 +1,6 @@
 # 9) Reduce to find product of all numbers — commented version
 # functools.reduce applies a binary function cumulatively to the items of a sequence.
-from functools import reduce
+from functools import reduce    
 
 numbers = [1, 2, 3, 4]
 
