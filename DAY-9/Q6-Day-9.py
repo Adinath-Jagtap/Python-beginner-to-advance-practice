@@ -7,4 +7,3 @@ sorted_by_second = sorted(tuples, key=lambda t: t[1])
 
 # Print sorted result
 print("sorted_by_second:", sorted_by_second)
-# -> [('banana', 2), ('kiwi', 2), ('apple', 5), ('pear', 8)]
