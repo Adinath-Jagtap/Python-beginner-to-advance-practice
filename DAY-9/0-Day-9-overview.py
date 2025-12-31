@@ -825,6 +825,7 @@ WHEN TO USE WHAT:
 ✓ Filter: When filtering with existing function
 ✓ Reduce: For accumulation operations beyond sum/max/min
 ✓ Lambda: For simple, throwaway functions with map/filter/sort
+
 BEST PRACTICES:
 ✓ Prefer list comprehensions over map/filter (more Pythonic)
 ✓ Use built-in functions (sum, max, min) over reduce
