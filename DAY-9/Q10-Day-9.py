@@ -9,4 +9,4 @@ numbers = [1, 2, 3, 4, 5, 6]
 squared_evens = list(map(lambda x: x * x, filter(lambda x: x % 2 == 0, numbers)))
 
 # Print final result
-print("squared_evens:", squared_evens)  # -> [4, 16, 36]
+print("squared_evens:", squared_evens)
