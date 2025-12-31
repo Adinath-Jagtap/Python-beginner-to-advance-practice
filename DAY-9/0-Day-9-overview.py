@@ -832,3 +832,19 @@ BEST PRACTICES:
 ✓ Use regular functions for complex logic
 ✓ Choose readability over cleverness
 '''
+
+# =============================================================================
+# PYTHON PRACTICE QUESTIONS
+# =============================================================================
+'''
+1. List comprehension to create squares of numbers
+2. List comprehension with an if condition (filtering)
+3. Nested list comprehension to create a 2D matrix
+4. Dictionary comprehension to map keys to values
+5. Set comprehension to create a unique collection
+6. Lambda function to sort a list of tuples by the second element
+7. Use map() to apply a function to all list elements
+8. Use filter() to get even numbers from a list
+9. Use reduce() to find the product of all numbers
+10. Combine map(), filter(), and lambda() in a single expression
+'''
