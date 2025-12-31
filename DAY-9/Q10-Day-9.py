@@ -3,7 +3,7 @@
 numbers = [1, 2, 3, 4, 5, 6]
 
 # Step-by-step:
-#  - filter(lambda x: x % 2 == 0, numbers) selects even numbers
+#  - filter(lambda x: x % 2 == 0,numbers) selects even numbers
 #  - map(lambda x: x * x, ...) squares each selected number
 # Wrap with list() to realize the result.
 squared_evens = list(map(lambda x: x * x, filter(lambda x: x % 2 == 0, numbers)))
