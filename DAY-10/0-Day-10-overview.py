@@ -642,3 +642,20 @@ copy = arr.copy()
 copy[0] = 100
 print(arr)               # [1 2 3 4 5] (not modified)
 print(copy)              # [100   2   3   4   5]
+
+
+# =============================================================================
+# PYTHON PRACTICE QUESTIONS - NUMPY
+# =============================================================================
+'''
+1. Create a 1D NumPy array and perform basic arithmetic operations
+2. Create a 2D NumPy array (matrix) and access elements by index
+3. Use array slicing and advanced indexing
+4. Reshape a 1D array into a 2D array using np.reshape()
+5. Perform element-wise operations (add, multiply, square)
+6. Find mean, median, and standard deviation of an array
+7. Create arrays of zeros, ones, and random values
+8. Use boolean indexing to filter an array based on a condition
+9. Stack arrays vertically (vstack) and horizontally (hstack)
+10. Compute the dot product of two matrices (np.dot or @ operator)
+'''
