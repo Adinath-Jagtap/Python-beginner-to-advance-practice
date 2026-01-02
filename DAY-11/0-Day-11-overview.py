@@ -792,7 +792,18 @@ df2 = pd.DataFrame({
 grouped = df2.groupby(['Department', 'Gender'])
 print(grouped.mean())
 
-
 # =============================================================================
-# PRACTICE QUESTIONS
+# PYTHON PRACTICE QUESTIONS - PANDAS 
 # =============================================================================
+'''
+1. Create a pandas DataFrame from a dictionary
+2. Read a CSV file into a DataFrame using pd.read_csv()
+3. Display first/last N rows with head() and tail()
+4. Select specific columns from a DataFrame
+5. Filter rows based on a condition
+6. Sort a DataFrame by one or more column values
+7. Add a new column to a DataFrame (derived or constant)
+8. Drop columns from a DataFrame using drop()
+9. Handle missing values: check (isnull()), fill (fillna()), drop (dropna())
+10. Get basic statistics and info using describe() and info()
+'''
