@@ -953,33 +953,3 @@ df = df.assign(
     E=lambda x: x['C'] + x['D']
 )
 print(df)
-
-
-# =============================================================================
-# PYTHON PRACTICE QUESTIONS - PANDAS DATA MANIPULATION
-# =============================================================================
-'''
-1. Group data by column and aggregate (groupby)
-   - Create a DataFrame with sales data (Product, Region, Sales)
-   - Group by Product and calculate total sales
-   - Group by Region and find average sales
-
-2. Merge two DataFrames
-   - Create two DataFrames with employee info (ID, Name) and (ID, Salary)
-   - Perform inner, left, right, and outer merges
-   - Merge on different column names
-
-3. Concatenate multiple DataFrames
-   - Create 3 DataFrames with same columns
-   - Concatenate vertically and reset index
-   - Concatenate horizontally
-
-4. Pivot table creation
-   - Create DataFrame with Date, Product, Sales
-   - Create pivot table showing Products vs Dates
-   - Add totals using margins
-
-5. Apply custom function to column
-   - Create DataFrame with prices
-   - Apply custom function to add tax (18%)
-   - Use lambda to categor
