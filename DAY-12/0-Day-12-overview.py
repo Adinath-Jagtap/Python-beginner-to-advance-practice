@@ -1028,3 +1028,19 @@ print(df)
 - Use method chaining for cleaner code: df.groupby().sum().reset_index()
 - Test on small sample data before applying to large datasets
 '''
+
+# =============================================================================
+# PYTHON PRACTICE QUESTIONS - PANDAS ADVANCED
+# =============================================================================
+'''
+1. Group data by a column and aggregate results using groupby() and agg()
+2. Merge two DataFrames using pd.merge() with different join types (inner, left, right)
+3. Concatenate multiple DataFrames using pd.concat()
+4. Create a pivot table using DataFrame.pivot_table()
+5. Apply a custom function to a column or row using apply() or applymap()
+6. Identify and handle duplicate rows using duplicated() and drop_duplicates()
+7. Rename columns using DataFrame.rename() (single and multiple columns)
+8. Convert data types of columns using astype() and to_datetime()/to_numeric()
+9. Filter DataFrame with multiple conditions (AND / OR) using & and | with parentheses
+10. Create a new column derived from existing columns (arithmetic or conditional)
+'''
