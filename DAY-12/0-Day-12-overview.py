@@ -953,3 +953,78 @@ df = df.assign(
     E=lambda x: x['C'] + x['D']
 )
 print(df)
+
+
+# =============================================================================
+# KEY TAKEAWAYS - PANDAS DATA MANIPULATION
+# =============================================================================
+'''
+📌 GROUPBY:
+- Use groupby() to aggregate data by categories
+- Common functions: sum(), mean(), count(), min(), max()
+- Can group by multiple columns: df.groupby(['Col1', 'Col2'])
+- Use agg() for multiple aggregations at once
+
+📌 MERGING:
+- merge() combines DataFrames like SQL JOIN
+- Types: inner (default), left, right, outer
+- Specify columns: on='ColumnName' or left_on/right_on for different names
+- Inner keeps only matching rows, outer keeps all rows
+
+📌 CONCATENATING:
+- concat() stacks DataFrames vertically (axis=0) or horizontally (axis=1)
+- Use ignore_index=True to reset index after vertical concat
+- join='inner' keeps only common columns, join='outer' keeps all
+
+📌 PIVOT TABLES:
+- pivot_table() creates Excel-style summaries
+- Specify: values, index (rows), columns, aggfunc
+- Use margins=True to add row/column totals
+- Default aggregation is mean()
+
+📌 APPLY FUNCTIONS:
+- apply() applies functions to columns or rows
+- Use lambda for simple operations: df['Col'].apply(lambda x: x * 2)
+- axis=1 applies function row-wise, axis=0 column-wise (default)
+- Great for complex transformations that can't be done with basic operations
+
+📌 DUPLICATES:
+- duplicated() checks for duplicate rows (returns boolean)
+- drop_duplicates() removes duplicate rows
+- Use subset=['Col1', 'Col2'] to check specific columns only
+- keep='first' (default), 'last', or False (mark all duplicates)
+
+📌 RENAMING:
+- rename() changes column names: df.rename(columns={'old': 'new'})
+- df.columns = ['New1', 'New2'] renames all columns at once
+- Use functions: df.rename(columns=str.upper) for all uppercase
+- inplace=True modifies original DataFrame
+
+📌 DATA TYPES:
+- astype() converts column data types: df['Col'].astype(int)
+- pd.to_numeric() converts with error handling: errors='coerce'
+- pd.to_datetime() converts strings to datetime objects
+- Check types with df.dtypes, optimize memory with 'category' type
+
+📌 FILTERING:
+- Use & (AND), | (OR), ~ (NOT) for multiple conditions
+- Always use parentheses: df[(condition1) & (condition2)]
+- isin() checks if values are in a list: df[df['Col'].isin([1, 2, 3])]
+- between() for range filtering: df[df['Col'].between(10, 20)]
+- query() provides cleaner syntax: df.query('Age > 25 and Salary > 50000')
+
+📌 NEW COLUMNS:
+- Direct assignment: df['New'] = df['A'] + df['B']
+- Use apply() for complex logic with multiple columns
+- np.where() for conditional values: np.where(condition, value_if_true, value_if_false)
+- np.select() for multiple conditions with different outputs
+- assign() method creates multiple columns: df.assign(C=..., D=...)
+
+💡 BEST PRACTICES:
+- Always check data types before operations (df.dtypes)
+- Use inplace=True carefully (it modifies original data)
+- Reset index after concatenation to avoid duplicate indices
+- Handle missing values (NaN) after merging outer joins
+- Use method chaining for cleaner code: df.groupby().sum().reset_index()
+- Test on small sample data before applying to large datasets
+'''
