@@ -1,4 +1,4 @@
-# 9) Stack arrays vertically and horizontally — commented version
+# 9) Stack arrays vertically and horizontally 
 import numpy as np
 
 # Create two arrays
