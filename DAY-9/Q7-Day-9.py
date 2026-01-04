@@ -1,4 +1,4 @@
-# 7) Map to apply function to all list elements — commented version
+# 7) Map to apply function to all list elements
 # We use map() with a lambda to double every number in the list.
 numbers = [1, 2, 3, 4]
 
