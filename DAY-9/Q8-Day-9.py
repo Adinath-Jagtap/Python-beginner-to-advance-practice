@@ -1,4 +1,4 @@
-# 8) Filter to get even numbers from list — commented version
+# 8) Filter to get even numbers from list
 # Use filter() with a lambda that keeps only even numbers (x % 2 == 0).
 numbers = [1, 2, 3, 4, 5, 6]
 
