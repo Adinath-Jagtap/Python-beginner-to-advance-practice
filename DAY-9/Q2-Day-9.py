@@ -1,4 +1,4 @@
-# 2) List comprehension with if condition — commented version
+# 2) List comprehension with if condition 
 # We filter the input list to only include even numbers, then square those.
 numbers = [1, 2, 3, 4, 5, 6, 7]  
 
