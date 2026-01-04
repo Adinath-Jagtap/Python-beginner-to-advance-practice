@@ -1,4 +1,4 @@
-# 5) Set comprehension — commented version
+# 5) Set comprehension 
 # Use a set comprehension to get unique squared values from a list that may contain duplicates.
 numbers = [1, 2, 2, 3, 4, 4]
 
