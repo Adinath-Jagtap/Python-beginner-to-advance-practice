@@ -1,4 +1,4 @@
-# 4) Reshape array from 1D to 2D — commented version
+# 4) Reshape array from 1D to 2D 
 import numpy as np
 
 # Create a 1D array with 6 elements
