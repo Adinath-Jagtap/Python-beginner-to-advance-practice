@@ -1,4 +1,4 @@
-# 6) Lambda to sort list of tuples by second element — commented version
+# 6) Lambda to sort list of tuples by second element 
 # We have a list of (fruit, count) tuples and want to sort by count (the second item).
 tuples = [("apple", 5), ("banana", 2), ("pear", 8), ("kiwi", 2)]
 
