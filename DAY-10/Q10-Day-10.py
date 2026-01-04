@@ -1,4 +1,4 @@
-# 10) Dot product of two matrices — commented version
+# 10) Dot product of two matrices
 import numpy as np
 
 # Create two matrices
