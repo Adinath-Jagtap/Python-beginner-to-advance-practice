@@ -1,4 +1,4 @@
-# 3) Array slicing and indexing — commented version
+# 3) Array slicing and indexing 
 import numpy as np
 
 # Create a 1D array
