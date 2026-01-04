@@ -7,6 +7,7 @@ url = "https://jsonplaceholder.typicode.com/posts/1"
 # Send GET request
 response = requests.get(url)
 
+
 # Check status and print a short result
 if response.ok:
     print("Status:", response.status_code)
