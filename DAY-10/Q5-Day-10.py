@@ -1,4 +1,4 @@
-# 5) Mathematical operations on arrays — commented version
+# 5) Mathematical operations on arrays 
 import numpy as np
 
 # Create two arrays
