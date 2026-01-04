@@ -1,4 +1,4 @@
-# 7) Rename columns — commented version
+# 7) Rename columns
 import pandas as pd
 
 df = pd.DataFrame({
