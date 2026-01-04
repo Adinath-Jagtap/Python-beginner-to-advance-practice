@@ -1,4 +1,4 @@
-# 6) Find mean, median, standard deviation — commented version
+# 6) Find mean, median, standard deviation 
 import numpy as np
 
 # Create an array
