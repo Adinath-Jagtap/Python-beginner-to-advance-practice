@@ -6,6 +6,7 @@ This repository documents my daily Python practice journey, progressing from beg
 
 ## CHEATSHEET BY SYNTAX SYNDICATE:
 https://pythoncheatsheet-syntax-syndicate.netlify.app/
+
 https://cheatsheet.syntaxsyndicate.co.in/
 
 ## Learning Path
