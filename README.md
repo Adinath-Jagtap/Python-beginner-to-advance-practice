@@ -5,6 +5,7 @@
 This repository documents my daily Python practice journey, progressing from beginner fundamentals to advanced concepts. Each day focuses on specific topics with hands-on problem solving.
 
 ## CHEATSHEET BY SYNTAX SYNDICATE:
+https://pythoncheatsheet-syntax-syndicate.netlify.app/
 https://cheatsheet.syntaxsyndicate.co.in/
 
 ## Learning Path
