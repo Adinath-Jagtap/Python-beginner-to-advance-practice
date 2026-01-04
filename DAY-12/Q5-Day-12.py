@@ -1,4 +1,4 @@
-# 5) Apply custom function to column — commented version
+# 5) Apply custom function to column 
 import pandas as pd
 
 df = pd.DataFrame({
