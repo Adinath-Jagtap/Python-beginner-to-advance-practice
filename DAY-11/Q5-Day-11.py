@@ -1,4 +1,4 @@
-# 5) Filter rows based on a condition — commented version
+# 5) Filter rows based on a condition 
 import pandas as pd
 
 df = pd.DataFrame({
