@@ -1,4 +1,4 @@
-# 4) Pivot table creation — commented version
+# 4) Pivot table creation 
 import pandas as pd
 
 # Example sales data
