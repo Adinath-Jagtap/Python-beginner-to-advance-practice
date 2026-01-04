@@ -1,4 +1,4 @@
-# 3) Concatenate multiple DataFrames — commented version
+# 3) Concatenate multiple DataFrames 
 import pandas as pd
 
 # Two DataFrames with same columns (vertical concat)
