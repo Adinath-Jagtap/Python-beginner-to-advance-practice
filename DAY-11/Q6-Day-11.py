@@ -1,4 +1,4 @@
-# 6) Sort a DataFrame by one or more column values — commented version
+# 6) Sort a DataFrame by one or more column values
 import pandas as pd
 
 df = pd.DataFrame({
