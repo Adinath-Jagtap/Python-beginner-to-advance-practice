@@ -1,6 +1,7 @@
 # 10) Dot product of two matrices
 import numpy as np
 
+
 # Create two matrices
 A = np.array([
     [1, 2],
