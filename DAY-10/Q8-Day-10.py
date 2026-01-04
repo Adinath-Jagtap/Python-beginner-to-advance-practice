@@ -1,4 +1,4 @@
-# 8) Boolean indexing (filter array based on condition) — commented version
+# 8) Boolean indexing (filter array based on condition) 
 import numpy as np
 
 # Create an array
