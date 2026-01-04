@@ -1,4 +1,4 @@
-# 1) Make GET request to a public API — commented version
+# 1) Make GET request to a public API 
 import requests
 
 # Example public API (placeholder JSON posts)
