@@ -1,4 +1,4 @@
-# 6) Handle duplicate rows — commented version
+# 6) Handle duplicate rows 
 import pandas as pd
 
 df = pd.DataFrame({
