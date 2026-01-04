@@ -1,4 +1,4 @@
-# 2) Read a CSV file into a DataFrame using pd.read_csv() — commented version
+# 2) Read a CSV file into a DataFrame using pd.read_csv() 
 import pandas as pd
 
 # Replace 'data.csv' with the path to your CSV file
