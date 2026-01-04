@@ -1,4 +1,4 @@
-# 4) Select specific columns from a DataFrame — commented version
+# 4) Select specific columns from a DataFrame 
 import pandas as pd
 
 df = pd.DataFrame({
