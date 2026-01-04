@@ -1,7 +1,7 @@
 # 5) Handle API errors with try-except
 import requests
 
-url = "https://jsonplaceholder.typicode.com/invalid-endpoint"  # intentionally wrong
+url = "https://jsonplaceholder.typicode.com/invalid-endpoint"  # intentionally wrong  
 
 try:
     resp = requests.get(url, timeout=5)
