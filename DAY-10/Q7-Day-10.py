@@ -1,4 +1,4 @@
-# 7) Create array with zeros, ones, random values — commented version
+# 7) Create array with zeros, ones, random values 
 import numpy as np
 
 # Create arrays using NumPy utility functions
