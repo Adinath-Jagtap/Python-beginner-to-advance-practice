@@ -1,4 +1,4 @@
-# 3) Nested list comprehension (2D matrix) — commented version
+# 3) Nested list comprehension (2D matrix) 
 # We create a 3x3 matrix with values 1..9 using a nested comprehension.
 # Outer loop: for i in range(3) creates 3 rows (i = 0,1,2)
 # Inner loop: for j in range(3) creates 3 columns (j = 0,1,2)
