@@ -1,4 +1,4 @@
-# 7) Add a new column to a DataFrame (derived or constant) — commented version
+# 7) Add a new column to a DataFrame (derived or constant) 
 import pandas as pd
 
 df = pd.DataFrame({
