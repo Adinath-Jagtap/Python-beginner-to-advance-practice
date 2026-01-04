@@ -1,4 +1,4 @@
-# 9) Filter with multiple conditions (AND/OR) — commented version
+# 9) Filter with multiple conditions (AND/OR)
 import pandas as pd
 
 df = pd.DataFrame({
