@@ -1,4 +1,4 @@
-# 4) Dictionary comprehension — commented version
+# 4) Dictionary comprehension 
 # Build a dict mapping each number to its square.
 numbers = [1, 2, 3, 4, 5]
 
