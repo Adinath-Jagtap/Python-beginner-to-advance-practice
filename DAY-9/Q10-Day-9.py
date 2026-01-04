@@ -1,4 +1,4 @@
-# 10) Combine map, filter, lambda in one expression — commented version
+# 10) Combine map, filter, lambda in one expression
 # Example: from a list of numbers, keep only evens, then square each remaining number.
 numbers = [1, 2, 3, 4, 5, 6]
 
