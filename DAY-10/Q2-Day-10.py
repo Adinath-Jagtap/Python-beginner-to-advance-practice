@@ -1,4 +1,4 @@
-# 2) Create 2D array (matrix) and access elements — commented version
+# 2) Create 2D array (matrix) and access elements
 import numpy as np
 
 # Create a 2D NumPy array (matrix)
