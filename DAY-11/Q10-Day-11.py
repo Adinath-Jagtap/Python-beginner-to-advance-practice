@@ -1,4 +1,4 @@
-# 10) Get basic statistics and info using describe() and info() — commented version
+# 10) Get basic statistics and info using describe() and info() 
 import pandas as pd
 
 df = pd.DataFrame({
