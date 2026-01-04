@@ -954,3 +954,19 @@ print(f"- {quote_data['author']}")
 - Log requests for debugging
 - Check response status before parsing JSON
 '''
+
+# =============================================================================
+# PYTHON PRACTICE QUESTIONS - APIs & REQUESTS
+# =============================================================================
+'''
+1. Make a GET request to a public API using requests.get()
+2. Parse and inspect a JSON response from an API
+3. Add custom headers to an API request
+4. Make a POST request with data or JSON payload
+5. Handle API errors and network issues using try-except
+6. Extract specific values from a nested JSON response
+7. Make multiple API calls inside a loop and collect results
+8. Save an API response to a JSON file
+9. Add query parameters to an API request
+10. Work with an API that requires authentication (API key / token)
+'''
