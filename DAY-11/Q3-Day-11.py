@@ -1,4 +1,4 @@
-# 3) Display first/last N rows with head() and tail() — commented version
+# 3) Display first/last N rows with head() and tail() 
 import pandas as pd
 
 # Example DataFrame
