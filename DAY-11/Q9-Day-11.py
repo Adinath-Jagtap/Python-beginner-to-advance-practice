@@ -1,4 +1,4 @@
-# 9) Handle missing values: isnull(), fillna(), dropna() — commented version
+# 9) Handle missing values: isnull(), fillna(), dropna() 
 import pandas as pd
 import numpy as np
 
