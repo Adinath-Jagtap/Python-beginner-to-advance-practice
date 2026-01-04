@@ -1,4 +1,4 @@
-# 1) Create a pandas DataFrame from a dictionary — commented version
+# 1) Create a pandas DataFrame from a dictionary 
 import pandas as pd
 
 # Create a dictionary where keys are column names and values are lists of column values
