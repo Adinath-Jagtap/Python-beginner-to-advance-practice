@@ -1,4 +1,4 @@
-# 2) Merge two DataFrames — commented version
+# 2) Merge two DataFrames
 import pandas as pd
 
 # Left table: students and their IDs
