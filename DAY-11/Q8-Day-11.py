@@ -1,4 +1,4 @@
-# 8) Drop columns from a DataFrame using drop() — commented version
+# 8) Drop columns from a DataFrame using drop() 
 import pandas as pd
 
 df = pd.DataFrame({
