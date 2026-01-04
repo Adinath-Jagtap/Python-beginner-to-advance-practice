@@ -1,4 +1,4 @@
-# 10) Create new column from existing columns — commented version
+# 10) Create new column from existing columns 
 import pandas as pd
 
 df = pd.DataFrame({
