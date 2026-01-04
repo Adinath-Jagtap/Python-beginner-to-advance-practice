@@ -1,4 +1,4 @@
-# Q1 List comprehension to create squares — commented version
+# Q1 List comprehension to create squares
 # We take a list of numbers and create a new list with each number squared.
 numbers = [1, 2, 3, 4, 5]
 
