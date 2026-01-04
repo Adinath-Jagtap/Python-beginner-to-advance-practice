@@ -1,4 +1,4 @@
-# 1) Create 1D array and perform basic operations — commented version
+# 1) Create 1D array and perform basic operations
 import numpy as np
 
 # Create a 1D NumPy array
