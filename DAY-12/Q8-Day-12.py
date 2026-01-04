@@ -1,4 +1,4 @@
-# 8) Convert data types of columns — commented version
+# 8) Convert data types of columns 
 import pandas as pd
 import numpy as np
 
