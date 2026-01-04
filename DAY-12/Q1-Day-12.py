@@ -1,4 +1,4 @@
-# 1) Group data by column and aggregate (groupby) — commented version
+# 1) Group data by column and aggregate (groupby) 
 import pandas as pd
 
 # Example DataFrame: sales by store and product
