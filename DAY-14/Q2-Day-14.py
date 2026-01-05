@@ -1,4 +1,4 @@
-# 2) Extract all links (<a href>) — commented version
+# 2) Extract all links (<a href>) 
 import requests
 from bs4 import BeautifulSoup
 
