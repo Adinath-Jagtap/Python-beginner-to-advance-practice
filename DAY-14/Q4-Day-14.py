@@ -1,4 +1,4 @@
-# 4) Scrape data from HTML table — commented version
+# 4) Scrape data from HTML table
 from bs4 import BeautifulSoup
 
 html = """
