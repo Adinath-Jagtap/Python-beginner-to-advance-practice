@@ -1,4 +1,4 @@
-# 5) Extract data using CSS selectors — commented version
+# 5) Extract data using CSS selectors
 from bs4 import BeautifulSoup
 
 html = """
