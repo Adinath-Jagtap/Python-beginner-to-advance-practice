@@ -1397,5 +1397,17 @@ def scrape_website(url, delay=2):
 
 
 # =============================================================================
-# PYTHON PRACTICE QUESTIONS - WEB SCRAPING & BEAUTIFULSOUP
+# PYTHON PRACTICE QUESTIONS - WEB SCRAPING (BeautifulSoup)
 # =============================================================================
+'''
+1. Scrape the webpage title using BeautifulSoup
+2. Extract all hyperlinks (<a> tags) from a webpage
+3. Find all paragraph (<p>) elements and print their text
+4. Scrape structured data from an HTML table
+5. Extract data using CSS selectors with select() / select_one()
+6. Find elements by class name using find_all()
+7. Scrape image URLs (<img> src attributes) from a webpage
+8. Handle HTTP and request errors gracefully using try-except
+9. Extract specific content from a <div> based on id or class
+10. Scrape multiple pages in a loop (pagination handling)
+'''
