@@ -1,4 +1,4 @@
-# 8) Handle request errors — commented version
+# 8) Handle request errors
 import requests
 from bs4 import BeautifulSoup
 
