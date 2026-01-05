@@ -1,4 +1,4 @@
-# 3) Extract all paragraph text — commented version
+# 3) Extract all paragraph text
 import requests
 from bs4 import BeautifulSoup
 
