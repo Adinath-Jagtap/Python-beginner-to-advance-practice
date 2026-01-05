@@ -1,4 +1,4 @@
-# 1) Scrape webpage title — commented version
+# 1) Scrape webpage title 
 import requests
 from bs4 import BeautifulSoup
 
