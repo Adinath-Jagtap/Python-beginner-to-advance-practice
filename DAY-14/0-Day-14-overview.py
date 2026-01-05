@@ -1395,7 +1395,6 @@ def scrape_website(url, delay=2):
 - Make code modular and maintainable
 '''
 
-
 # =============================================================================
 # PYTHON PRACTICE QUESTIONS - WEB SCRAPING (BeautifulSoup)
 # =============================================================================
