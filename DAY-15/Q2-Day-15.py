@@ -1,4 +1,4 @@
-# 2) Find all email addresses in text — commented version
+# 2) Find all email addresses in text
 import re
 
 text = "Contact: alice@example.com, bob.smith+news@sub.domain.co.in; invalid@com"
