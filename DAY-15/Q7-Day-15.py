@@ -11,4 +11,4 @@ pwd_pattern = r"^(?=.*\d)(?=.*[^\w\s]).{8,}$"
 
 for pwd in passwords:
     ok = bool(re.fullmatch(pwd_pattern, pwd))
-    print(f"{pwd:12} -> valid? {ok}")
+    print(f"{pwd:12} -> valid? {ok}")     
