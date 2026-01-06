@@ -1148,3 +1148,19 @@ print("Greedy:", match.group())  # <div>Content
 # import re
 # def double_num(m): return str(int(m.group())*2)
 # print(re.sub(r"\d+", double_num, "I have 2 apples and 3 oranges"))  # "I have 4 apples and 6 oranges"
+
+# =============================================================================
+# PYTHON PRACTICE QUESTIONS - REGULAR EXPRESSIONS (REGEX)
+# =============================================================================
+'''
+1. Match an exact pattern within a string using re.search() or re.match()
+2. Find all email addresses in a given text using re.findall()
+3. Validate a phone number format using regular expressions
+4. Extract all URLs from a text string
+5. Replace multiple spaces with a single space using re.sub()
+6. Find all words that start with a capital letter
+7. Validate a password (minimum 8 characters, at least 1 digit and 1 special character)
+8. Extract all numbers from a string
+9. Split a string using multiple delimiters with re.split()
+10. Remove all non-alphabetic characters from a string using regex
+'''
