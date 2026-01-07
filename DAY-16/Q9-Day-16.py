@@ -2,6 +2,7 @@
 
 import requests
 
+
 try:
     resp = requests.get("https://jsonplaceholder.typicode.com/users", timeout=5)
     resp.raise_for_status()
