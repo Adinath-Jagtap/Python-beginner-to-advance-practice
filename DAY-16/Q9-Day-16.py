@@ -19,6 +19,6 @@ except Exception:
 emails = [u["email"] for u in users]
 print(emails)
 # save to file
-with open("user_emails.txt", "w") as f:
+with open("Q9-user_emails.txt", "w") as f:
     for e in emails:
         f.write(e + "\n")
