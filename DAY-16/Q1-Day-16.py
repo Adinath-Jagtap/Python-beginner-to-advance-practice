@@ -13,4 +13,4 @@ print("Rows with value > 50:", count_gt_50)
 with open("Q1-count_result.txt", "w") as f:
     f.write(f"Rows with value > 50: {count_gt_50}\n")
 
-df[df["value"] > 50].to_csv("filtered_numbers.csv", index=False)
+df[df["value"] > 50].to_csv("Q1_filtered_numbers.csv", index=False)
